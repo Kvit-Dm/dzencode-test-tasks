@@ -3,8 +3,6 @@ import mysql from 'mysql2';
 
 const app = express();
 
-
-
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
