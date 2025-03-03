@@ -1,15 +1,33 @@
 import express from 'express';
 import mysql from 'mysql2';
+import dotenv from 'dotenv';
+import cors from 'cors';
+import ip from 'ip';
 
+dotenv.config();
+// const PORT = process.env.PORT
 const app = express();
+
+
+app.use(cors({origin: '*'})); //TODO
 
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'edcVxswqaz132435',
     database: 'dzencodedb',
-
 })
+
+
+
+app.get('/', (req, res) => {
+    res.send({massage: 'Hello World!'});
+    console.log(process.env);
+})
+
+// app.listen(PORT, () => {
+//     console.log(`Server started on port ${ip.address()}: ${PORT}`);
+// })
 
 
 db.connect(err => {
@@ -33,6 +51,6 @@ app.get("/products", (req, res) => {
     })
 })
 
-app.listen(8080,()=>{
+app.listen(8080, () => {
     console.log('Server running on port 8080');
 });
