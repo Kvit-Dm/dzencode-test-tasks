@@ -1,0 +1,8 @@
+# Ignore node_modules folder
+node_modules/
+
+# Ignore build directories
+.next/
+
+# Ignore specific files
+public/index.html

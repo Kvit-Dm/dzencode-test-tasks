@@ -3,6 +3,7 @@
 import styles from './page.module.css';
 import { Provider } from 'react-redux';
 import { store } from '@/redux/store';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 // import React, { Suspense, useEffect, useState, lazy } from 'react';
 
@@ -11,7 +12,13 @@ export default function Home() {
     <Provider store={store}>
       <div className={styles['main-grid']}>
         <div className={styles['side-bar']}>
-          <h3>Menu</h3>
+          <ul className="container">
+            <li>ПРИХОД</li>
+            <li>ГРУППЫ</li>
+            <li>ПРОДУКТЫ</li>
+            <li>ПОЛЬЗОВАТЕЛИ</li>
+            <li>НАСТРОЙКИ</li>
+          </ul>
           <div />
         </div>
         <div className={styles['header']}>
