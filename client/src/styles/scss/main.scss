@@ -1,11 +1,11 @@
 // Import Bootstrap SCSS first
-@import "~bootstrap/scss/bootstrap";
+@use "bootstrap";
 
 // Import your custom styles and overrides
-@import './variables';
-@import './mixins';
-@import './global';
+//@use './variables';
+//@use './mixins';
+//@use './global';
 
 body{
-  font-size: 12px;
+  font-size: 34px;
 }
