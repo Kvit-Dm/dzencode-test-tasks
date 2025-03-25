@@ -1,11 +1,11 @@
 'use client';
 
-import styles from './page.module.css';
+import './page.scss';
 import { Provider } from 'react-redux';
 import { store } from '@/redux/store';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import '../styles/scss/main.css';
-import 'bootstrap/dist/css/bootstrap.css';
+import '@/styles/scss/main.scss';
 import './globals.css';
 import BootstrapClient from '@/components/BootstrapClient.js';
 // import React, { Suspense, useEffect, useState, lazy } from 'react';
@@ -13,8 +13,8 @@ import BootstrapClient from '@/components/BootstrapClient.js';
 export default function Home() {
   return (
     <Provider store={store}>
-      <div className={styles['main-grid']}>
-        <div className={styles['side-bar']}>
+      <div className="main-grid">
+        <div className="side-bar">
           <ul className="container">
             <li>ПРИХОД</li>
             <li>ГРУППЫ</li>
@@ -24,10 +24,10 @@ export default function Home() {
           </ul>
           <div />
         </div>
-        <div className={styles['header']}>
-          <h2 className={'text-danger'}>INVENTORY</h2>
+        <div className="header">
+          <h2 className="text-danger">INVENTORY</h2>
         </div>
-        <div className={styles['main-block']}>
+        <div className="main-block">
           <div>
             <main>
               <div className="text-center mt-4 col-md-6 mx-auto">
