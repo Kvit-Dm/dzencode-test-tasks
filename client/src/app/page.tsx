@@ -7,6 +7,7 @@ import { store } from '@/redux/store';
 // import '../styles/scss/main.css';
 import '@/styles/scss/main.scss';
 import './globals.css';
+import LeftSidebar from '@/app/LeftSidebar';
 import BootstrapClient from '@/components/BootstrapClient.js';
 // import React, { Suspense, useEffect, useState, lazy } from 'react';
 
@@ -14,14 +15,8 @@ export default function Home() {
   return (
     <Provider store={store}>
       <div className="main-grid">
-        <div className="side-bar">
-          <ul className="container">
-            <li>ПРИХОД</li>
-            <li>ГРУППЫ</li>
-            <li>ПРОДУКТЫ</li>
-            <li>ПОЛЬЗОВАТЕЛИ</li>
-            <li>НАСТРОЙКИ</li>
-          </ul>
+        <div className="left-bar">
+          <LeftSidebar />
           <div />
         </div>
         <div className="header">
