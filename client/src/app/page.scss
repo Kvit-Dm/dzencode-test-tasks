@@ -1,19 +1,19 @@
 .main-grid {
   display: grid;
   height: 100vh;
+  width: 100vw;
   grid-template-columns: 200px 1fr;
   grid-template-rows: 60px 1fr;
   grid-column-gap: 1px;
   grid-row-gap: 1px;
-  background-color: rgb(240, 240, 240);
 }
 
 .left-bar {
-  height: 100vh;
   grid-area: 2 / 2 / 3 / 1;
-  padding: 0 5px 0;
-  margin-top: 20px;
-
+  padding: 20px 5px 0;
+  font-weight: bold;
+  box-shadow: -2px 8px 16px 0px #171717;
+  z-index: 2;
 }
 
 
@@ -24,6 +24,8 @@
   padding: 0 20px;
   align-items: center;
   border-bottom: 1px solid #28a745 ;
+  box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2);
+  z-index: 2;
     &-logo{
     width: 50px;
       height: 50px;
@@ -37,7 +39,7 @@
 }
 
 .main-block {
-  //grid-area: 2 / 2 / 3 / 3;
+  padding: 20px;
   background-color: rgb(241, 245, 248);
   overflow-y: auto;
 }
