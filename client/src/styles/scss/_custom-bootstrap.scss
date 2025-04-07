@@ -1,0 +1,8 @@
+//$paragraph-margin: 0; // Disable Bootstrap's default <p> margins
+//$paragraph-padding: 0; // Disable Bootstrap's default <p> margins
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/maps";      // builds $theme-colors-rgb
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/utilities";

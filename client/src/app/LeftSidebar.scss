@@ -4,8 +4,10 @@
   border-radius: 50%;
   margin: 0 auto 30px;
   display: block;
+  box-shadow: 0px 0px 20px #0003;
   //border: 1px solid #28a745;
 }
+
 .sidebar-nav{
   list-style: none;
   text-align: center;
@@ -20,13 +22,15 @@
   text-align: left;
   //transition: color 0.3s ease;
   display: inline-block;
-  padding: 10px 15px;
+  margin: 10px 15px;
   text-decoration: none;
   border: 0;
   transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
 
   &:hover {
     color: #28a745 ;
+    transition: color 0.3s ease;
+
   }
 }
 
@@ -44,5 +48,6 @@
     position: absolute;
     bottom: 0;
     left: 0;
+    transition: color 0.3s ease;
   }
 }
