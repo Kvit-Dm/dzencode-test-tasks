@@ -3,7 +3,7 @@
   border: 1px solid #111111;
 
   &-title{
-
+  margin-bottom: 20px;
   }
 
   &-list {
@@ -11,11 +11,19 @@
   }
 
   &-item {
+    min-height: 100px;
     display: flex;
-    height: 100px;
-    border: 1px solid #111111;
-    //padding: 0 5px 30px 0;
-    margin-bottom: 20px;
+    border: 1px solid rgb(207, 216, 220);
+    border-radius: 10px;
+    margin: 0 5px 20px 5px;
+    cursor: pointer;
+
+    &-content{
+      width: 100%;
+
+      display: flex;
+      padding: 0 10px 0;
+    }
 
     &-name{
       display: flex;
@@ -23,7 +31,44 @@
       flex-direction: column;
       font-size: 24px;
       margin-bottom: 0 ;
-      margin-right: 10px;
+      //margin-right: 10px;
+      width: 60%;
+      text-decoration: underline;
+    }
+
+    &-amount{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      width: 5%;
+    }
+
+    &-dateReg{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      width: 20%;
+    }
+
+    &-prise{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      width: 15%;
+    }
+
+    &-deleteBtn{
+      text-align: center;
+      margin: auto 10px auto ;
+      width: 35px;
+      height: 35px;
+      background: unset;
+      border: none;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
     }
   }
 
