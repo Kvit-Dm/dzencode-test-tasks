@@ -7,33 +7,24 @@ import './orders.scss';
 import bin from '@/assets/images/bin.png';
 import Image from 'next/image';
 
+import { products, orders } from '@/app';
+import * as Types from './types';
 export default function Orders() {
-  const orderList = [
-    {
-      id: 1,
-      name: 'Длинное предлинное длиннючее название заказа',
-      itemAmount: 21,
-      dateRegister: Date.now(),
-      priseUSD: 210000.5,
-    },
-    {
-      id: 2,
-      name: 'Длиннючее название заказа',
-      itemAmount: 22,
-      dateRegister: Date.now(),
-      priseUSD: 220000.5,
-    },
-    {
-      id: 3,
-      name: 'Длинное предлинноеназвание заказа',
-      itemAmount: 23,
-      dateRegister: Date.now(),
-      priseUSD: 230000.5,
-    },
-  ];
-
-  function openOrderHandler(id) {
+  function openOrderHandler(id: number) {
     return;
+  }
+
+  function PriceSumHandler(arr: Types.Product[]) {
+    // calculates sum of the order
+    const sumUAH: number = arr.reduce((acc, curr) => {
+      const price = curr.price.find((item) => item.symbol === 'USD');
+      return acc + (price?.value ?? 0);
+    }, 0);
+    const sumUSD: number = arr.reduce((acc, curr) => {
+      const price = curr.price.find((item) => item.symbol === 'USD');
+      return acc + (price?.value ?? 0);
+    }, 0);
+    return { USD: sumUSD, UAH: sumUAH };
   }
 
   return (
@@ -41,28 +32,39 @@ export default function Orders() {
       <h1 className="orders-title">Заказы</h1>
       <div className="orders">
         <div className="orders-list">
-          {orderList.map((item) => (
-            <>
-              <div className="orders-item" key={item.id}>
-                <div
-                  key={item.name}
-                  className={'orders-item-content'}
-                  onClick={() => openOrderHandler(item.id)}
-                >
-                  <p className={'orders-item-name'}>{item.name}</p>
-                  <p className={'orders-item-amount'}>{item.itemAmount}</p>
-                  <p className={'orders-item-dateReg'}>{item.dateRegister}</p>
-                  <p className={'orders-item-prise'}>{item.priseUSD}</p>
-                </div>
+          {orders.map((item: Types.Order) => {
+            return (
+              <>
+                <div className="orders-item" key={item.id}>
+                  <div
+                    key={item.id}
+                    className={'orders-item-content'}
+                    onClick={() => openOrderHandler(item.id)}
+                  >
+                    <p className={'orders-item-name'}>{item.title}</p>
+                    <p className={'orders-item-amount'}>
+                      {item.products.length}
+                      <br /> Продукта
+                    </p>
+                    <p className={'orders-item-date'}>{item.date}</p>
+                    <p className={'orders-item-price'}>
+                      {`${PriceSumHandler(item.products).USD} USD`}
+                      <br />
+                      {`${PriceSumHandler(item.products).UAH} UAH`}
+                    </p>
+                  </div>
 
-                <button className={'orders-item-deleteBtn'}>
-                  <Image className={'w-100 h-100'} src={bin} alt={'Delete'} />
-                </button>
-              </div>
-            </>
-          ))}
+                  <button className={'orders-item-deleteBtn'}>
+                    <Image className={'w-100 h-100'} src={bin} alt={'Delete'} />
+                  </button>
+                </div>
+              </>
+            );
+          })}
         </div>
-        <div className="orders-details"></div>
+        <div className="orders-details-vraper">
+          <div></div>
+        </div>
       </div>
     </div>
   );
