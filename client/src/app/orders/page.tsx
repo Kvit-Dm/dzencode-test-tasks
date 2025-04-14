@@ -35,17 +35,14 @@ export default function Orders() {
     <div>
       <h1 className="orders-title">Заказы</h1>
       <div className="orders">
-        <div className="orders-list">
+        {/*<div className={`${!selectedOrder ? 'w-100' : ''}`}>*/}
+        <div className={`orders-list ${selectedOrder ? 'orders-list-hide' : ''}`}>
           {orders.map((item: Types.Order) => {
             return (
               <>
                 <div className="orders-item" key={item.id}>
-                  <div
-                    key={item.id}
-                    className={'orders-item-content'}
-                    onClick={() => openOrderHandler(item.id)}
-                  >
-                    <p className={'orders-item-name'}>{item.title}</p>
+                  <div key={item.id} className={'orders-item-content'} onClick={() => openOrderHandler(item.id)}>
+                    <p className={`orders-item-name ${selectedOrder ? 'orders-item-name-hide' : ''}`}>{item.title}</p>
                     <p className={'orders-item-amount'}>
                       {item.products.length}
                       <br /> Продукта
@@ -67,16 +64,11 @@ export default function Orders() {
             );
           })}
         </div>
-        <div className="orders-details-right">
-          <button
-            className="orders-details-right-close"
-            onClick={() => setSelectedOrder(NaN)}
-          >
+        <div className={`orders-details ${selectedOrder ? 'orders-details-open' : ''}`}>
+          <button className="orders-details-closeBtn" onClick={() => setSelectedOrder(NaN)}>
             <Image src={icon_close} alt={''} />
           </button>
-          <p className={'orders-item-name'}>
-            {orders?.find((item) => item.id === selectedOrder)?.title}
-          </p>
+          <p className={'orders-item-name'}>{orders?.find((item) => item.id === selectedOrder)?.title}</p>
         </div>
       </div>
     </div>

@@ -8,7 +8,7 @@ import Image from 'next/image';
 // import { types } from 'sass';
 // import Null = types.Null;
 
-function LeftSidebar() {
+function LeftSidebar({ parentStyleProp = '' }) {
   const [activeItem, setActiveItem] = useState('');
 
   const menuItems = [
@@ -20,9 +20,7 @@ function LeftSidebar() {
   ];
 
   useEffect(() => {
-    const currentTab = window.location.href
-      .replace('http://localhost:3000/', '')
-      .split('/')[0];
+    const currentTab = window.location.href.replace('http://localhost:3000/', '').split('/')[0];
     menuItems.map((item) => {
       if ('./' + currentTab === item.href) {
         setActiveItem(item.name);
@@ -31,7 +29,7 @@ function LeftSidebar() {
   }, []);
 
   return (
-    <React.Fragment>
+    <div className={parentStyleProp}>
       <Image className="avatar " src={avatar} alt="avatar" />
       <ul className="sidebar-nav">
         {menuItems.map((item) => (
@@ -46,7 +44,7 @@ function LeftSidebar() {
           </li>
         ))}
       </ul>
-    </React.Fragment>
+    </div>
   );
 }
 

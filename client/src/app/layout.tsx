@@ -21,23 +21,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <html lang="en">
       <body>
         <Provider store={store}>
-          <div
-            className={`main-grid  ${!activeToggleMenu ? 'main-grid-hide' : ''}`}
-          >
-            <div
-              className={`left-bar  ${!activeToggleMenu ? 'left-bar-hide' : ''}`}
-            >
-              <button
-                className={`left-bar-btn  ${!activeToggleMenu ? 'left-bar-btn-hide' : ''}`}
-                onClick={ShowUpHandler}
-              >
+          <div className={'main-grid'}>
+            <div className={`left-bar  ${!activeToggleMenu ? 'left-bar-hide' : ''}`}>
+              <button className={'left-bar-btn'} onClick={ShowUpHandler}>
                 <div className="left-bar-btn-shell">
-                  <div
-                    className={`left-bar-btn-arrow  ${!activeToggleMenu ? 'left-bar-btn-arrow-rotate' : ''}`}
-                  ></div>
+                  <div className={`left-bar-btn-arrow  ${!activeToggleMenu ? 'left-bar-btn-arrow-rotate' : ''}`}></div>
                 </div>
               </button>
-              <LeftSidebar />
+              <LeftSidebar parentStyleProp="overflow-hidden" />
             </div>
             <div className="header">
               <Image className="header-logo" src={logo} alt={'logo'} />

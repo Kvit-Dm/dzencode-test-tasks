@@ -1,48 +1,62 @@
 .orders {
   display: flex;
-  //border: 1px solid #111111;
+  height: 100%;
 
-  &-title{
-  margin-bottom: 20px;
+  &-title {
+    margin-bottom: 20px;
   }
 
   &-list {
     width: 100%;
+    transition: width 0.5s ease;
+
+
+    &-hide{
+      width: 400px;
+    }
   }
 
   &-item {
     background-color: #fff;
     min-height: 100px;
+    max-height: 120px;
     display: flex;
-    border: 1px solid rgb(207, 216, 220);
+    border: 1px solid #cfd8dc;
     border-radius: 10px;
     margin: 0 5px 20px 5px;
-    padding: 5px 5px ;
+    padding: 5px 5px;
     cursor: pointer;
-    transition: transform 0.2s ease;
+
 
 
     &:hover {
-      transform: scale(1.001);
+      border: 1px solid #28a745;
     }
 
-    &-content{
+    &-content {
       width: 100%;
       display: flex;
       padding: 0 0 0 10px;
     }
 
-    &-name{
+    &-name {
       display: flex;
       justify-content: center;
       flex-direction: column;
-      margin-bottom: 0 ;
+      overflow: hidden;
+      margin-bottom: 0;
+      //transition: width 0.5s ease;
       width: 100%;
       text-decoration: underline;
       font-size: 18px;
+
+      &-hide{
+        color: #ffffff;
+        width: 0;
+      }
     }
 
-    &-amount{
+    &-amount {
       display: flex;
       justify-content: center;
       flex-direction: column;
@@ -51,7 +65,7 @@
       padding-left: 10px;
     }
 
-    &-date{
+    &-date {
       display: flex;
       justify-content: center;
       flex-direction: column;
@@ -60,7 +74,7 @@
       min-width: 95px;
     }
 
-    &-price{
+    &-price {
       display: flex;
       justify-content: center;
       flex-direction: column;
@@ -70,9 +84,9 @@
 
     }
 
-    &-deleteBtn{
+    &-deleteBtn {
       text-align: center;
-      margin: auto 10px auto ;
+      margin: auto 10px auto;
       width: min(25px);
       height: min(25px);
       background: unset;
@@ -86,36 +100,50 @@
   }
 
   &-details {
+    border-radius: 10px;
+    background-color: #fff;
+    position: relative;
+    width: 0;
+    //transform: scaleX(0);
+    transition: width 0.5s ease;
+    //overflow-x: hidden;
+    border: unset;
 
 
-    &-right{
-      width: 400px;
-      border: 1px solid #111111;
-      position: relative;
+    &-open {
+      border: 1px solid #cfd8dc;
+      padding: 5px;
+      width: 100%;
+      //transform: scaleX(1);
+      //transition: width 0.5s ease;
 
-      &-close{
-        content: '';
-        position: absolute;
-        top: -20px;
-        right: -20px;
-        height: 40px;
-        width: 40px;
-        border-radius: 50%;
-        background: #ffffff;
-        transition: transform 0.2s ease;
-        cursor: pointer;
+    }
 
-        &:hover {
-          transform: scale(1.15);
-        }
+    &-closeBtn {
+      content: '';
+      border: 1px solid #cfd8dc;
+      box-shadow: 0 0 8px 0 #7c8487;
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      background: #ffffff;
+      transition: transform 0.2s ease;
+      cursor: pointer;
+
+      &:hover {
+        background: #28a745;
       }
     }
-
-    &-bottom{
-      width: 100%;
-      border: 1px solid #111111;
-      height: 5px;
-    }
   }
+
+  &-bottom {
+    width: 100%;
+    border: 1px solid #111111;
+    height: 5px;
+  }
+
 }
 

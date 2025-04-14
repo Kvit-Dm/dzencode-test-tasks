@@ -2,18 +2,19 @@
   display: grid;
   height: 100vh;
   width: 100vw;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: auto 1fr;
   grid-template-rows: 80px 1fr;
   grid-column-gap: 1px;
   grid-row-gap: 1px;
 
 
-  &-hide{
-    grid-template-columns: 0 1fr;
-  }
+
 }
 
 .left-bar {
+  width: 200px;
+  transition: width 0.5s ease;
+  //overflow-x: hidden;
   position: relative;
   grid-area: 2 / 2 / 3 / 1;
   padding: 20px 5px 0;
@@ -25,7 +26,8 @@
 
 
   &-hide{
-   left: -200px;
+    width: 0;
+    padding: 0;
   }
 
   &-btn{
@@ -38,15 +40,14 @@
     border-radius: 50%;
     background-color: #ffffff;
     z-index: 0;
+    box-shadow: 0 0 8px 0 #7c8487;
 
     &:hover{
       background-color: #28a745;
       transition: top 1s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    &-hide{
-      right: -250px;
-    }
+
 
     &-shell{
       position: relative;
