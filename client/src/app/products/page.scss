@@ -1,0 +1,25 @@
+/* Grid container */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns grid */
+  gap: 10px;
+  transition: all 0.3s ease; /* Smooth transition for grid reflow */
+}
+
+/* Item animation */
+.grid-item {
+  position: relative;
+  opacity: 1;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  border: 1px solid black;
+}
+
+.grid-item.fade-out {
+  opacity: 0;
+  transform: scale(0.5); /* Shrinks the item */
+}
+
+/* For reflow of items, you can use a grid template that adjusts */
+.grid-item.remove {
+  display: none; /* Hides the item */
+}

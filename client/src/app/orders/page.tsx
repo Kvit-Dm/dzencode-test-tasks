@@ -1,17 +1,21 @@
 'use client';
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 import { lorem } from 'next/dist/client/components/react-dev-overlay/ui/utils/lorem';
 import '@/styles/scss/main.scss';
 import './orders.scss';
 import bin from '@/assets/images/bin.png';
+import icon_close from '@/assets/images/icon_close.png';
 import Image from 'next/image';
 
 import { products, orders } from '@/app';
 import * as Types from './types';
+
 export default function Orders() {
+  const [selectedOrder, setSelectedOrder] = useState(NaN);
+
   function openOrderHandler(id: number) {
-    return;
+    setSelectedOrder(id);
   }
 
   function PriceSumHandler(arr: Types.Product[]) {
@@ -58,12 +62,21 @@ export default function Orders() {
                     <Image className={'w-100 h-100'} src={bin} alt={'Delete'} />
                   </button>
                 </div>
+                <div className="orders-details-bottom"></div>
               </>
             );
           })}
         </div>
-        <div className="orders-details-vraper">
-          <div></div>
+        <div className="orders-details-right">
+          <button
+            className="orders-details-right-close"
+            onClick={() => setSelectedOrder(NaN)}
+          >
+            <Image src={icon_close} alt={''} />
+          </button>
+          <p className={'orders-item-name'}>
+            {orders?.find((item) => item.id === selectedOrder)?.title}
+          </p>
         </div>
       </div>
     </div>

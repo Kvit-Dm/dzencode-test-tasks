@@ -23,7 +23,7 @@
 
 
     &:hover {
-      transform: scale(1.01);
+      transform: scale(1.001);
     }
 
     &-content{
@@ -88,11 +88,34 @@
   &-details {
 
 
-    &-vraper{
+    &-right{
       width: 400px;
       border: 1px solid #111111;
+      position: relative;
+
+      &-close{
+        content: '';
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        background: #ffffff;
+        transition: transform 0.2s ease;
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(1.15);
+        }
+      }
     }
 
+    &-bottom{
+      width: 100%;
+      border: 1px solid #111111;
+      height: 5px;
+    }
   }
 }
 
