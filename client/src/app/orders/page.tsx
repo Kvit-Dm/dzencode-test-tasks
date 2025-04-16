@@ -65,7 +65,10 @@ export default function Orders() {
           })}
         </div>
         <div className={`orders-details ${selectedOrder ? 'orders-details-open' : ''}`}>
-          <button className="orders-details-closeBtn" onClick={() => setSelectedOrder(NaN)}>
+          <button
+            className={`orders-details-closeBtn ${!selectedOrder ? 'orders-details-closeBtn-hide' : ''}`}
+            onClick={() => setSelectedOrder(NaN)}
+          >
             <Image src={icon_close} alt={''} />
           </button>
           <p className={'orders-item-name'}>{orders?.find((item) => item.id === selectedOrder)?.title}</p>
