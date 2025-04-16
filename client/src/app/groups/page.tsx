@@ -1,3 +1,3 @@
 export default function Groups() {
-  return <div>Groups</div>;
+  return <h1>Groups</h1>;
 }
