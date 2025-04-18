@@ -18,6 +18,8 @@
     user-select: none;
 
 
+
+
     &-trigger {
       display: flex;
       justify-content: space-between;
@@ -26,6 +28,10 @@
       cursor: pointer;
       background: white;
       border-radius: 4px;
+
+      &:hover {
+        border: 1px solid #28a745;
+      }
     }
 
     &-options {
@@ -46,12 +52,21 @@
     }
   }
 
-}
+  &-list{
 
-.dropdown {
-  //position: relative;
-  //width: 200px;
-  //user-select: none;
-
+    &-item {
+      display: flex;
+      min-height: 100px;
+      max-height: 120px;
+      border: 1px solid #cfd8dc;
+      border-radius: 10px;
+      margin: 0 5px 20px 5px;
+      padding: 5px 5px;
+      cursor: pointer;
+      background-color: #fff;
+      //justify-content: center;
+      align-items: center;
+    }
+  }
 
 }

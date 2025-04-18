@@ -2,11 +2,17 @@
 import './page.scss';
 import { products } from '@/app';
 import { useState } from 'react';
+import ListItem from '@/components/ListItem/ListItem';
 
 export default function Products() {
-  const options = ['ALL', 'Apple', 'Banana', 'Orange'];
-  const [selected, setSelected] = useState('ALL');
-  const [open, setOpen] = useState(false);
+  // const typeOptions;
+  // const specificationOptions;
+  const typeOptions = ['ALL', 'type1', 'type2', 'type3'];
+  const specificationOptions = ['ALL', 'specification1', 'specification2', 'specification3'];
+  const [selectedTypeOptions, setselectedTypeOptions] = useState('ALL');
+  const [selectedSpecificationOptions, setselectedSpecificationOptions] = useState('ALL');
+  const [typeOptionsOpen, setTypeOptionsOpen] = useState(false);
+  const [specificationOptionsOpen, setSpecificationOptionsOpen] = useState(false);
 
   return (
     <div>
@@ -16,18 +22,26 @@ export default function Products() {
           <div className="d-flex align-items-center me-4 my-2">
             <p className="me-2">Тип:</p>
             <div className="products-dropdown">
-              <div className="products-dropdown-trigger" onClick={() => setOpen((prev) => !prev)}>
-                {selected} <span>▼</span>
+              <div
+                className="products-dropdown-trigger"
+                onClick={() =>
+                  setTypeOptionsOpen((prev) => {
+                    setSpecificationOptionsOpen(false);
+                    return !prev;
+                  })
+                }
+              >
+                {selectedTypeOptions} <span>▼</span>
               </div>
-              {open && (
+              {typeOptionsOpen && (
                 <div className="products-dropdown-options">
-                  {options.map((option) => (
+                  {typeOptions.map((option) => (
                     <div
                       key={option}
                       className="products-dropdown-item"
                       onClick={() => {
-                        setSelected(option);
-                        setOpen(false);
+                        setselectedTypeOptions(option);
+                        setTypeOptionsOpen(false);
                       }}
                     >
                       {option}
@@ -40,18 +54,26 @@ export default function Products() {
           <div className="d-flex align-items-center my-2">
             <p className="me-2">Спецификация:</p>
             <div className="products-dropdown">
-              <div className="products-dropdown-trigger" onClick={() => setOpen((prev) => !prev)}>
-                {selected} <span>▼</span>
+              <div
+                className="products-dropdown-trigger"
+                onClick={() =>
+                  setSpecificationOptionsOpen((prev) => {
+                    setTypeOptionsOpen(false);
+                    return !prev;
+                  })
+                }
+              >
+                {selectedSpecificationOptions} <span>▼</span>
               </div>
-              {open && (
+              {specificationOptionsOpen && (
                 <div className="products-dropdown-options">
-                  {options.map((option) => (
+                  {specificationOptions.map((option) => (
                     <div
                       key={option}
                       className="products-dropdown-item"
                       onClick={() => {
-                        setSelected(option);
-                        setOpen(false);
+                        setselectedSpecificationOptions(option);
+                        setSpecificationOptionsOpen(false);
                       }}
                     >
                       {option}
@@ -65,11 +87,15 @@ export default function Products() {
       </div>
       <div>
         {products?.map((item, index) => (
-          <div key={index} className="d-flex">
-            <div>{item?.isNew}</div>
-            <div>{item?.title}</div>
-            <div>{item?.title}</div>
-          </div>
+          // <>
+          //   <div key={index} className="products-list-item">
+          //     <div>{item?.isNew}</div>
+          //     <div>{item?.title}</div>
+          //     <div>{item?.title}</div>
+          //   </div>
+          // </>
+
+          <ListItem data={item} key={index} />
         ))}
       </div>
     </div>

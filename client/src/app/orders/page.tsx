@@ -9,7 +9,7 @@ import icon_close from '@/assets/images/icon_close.png';
 import Image from 'next/image';
 
 import { products, orders } from '@/app';
-import * as Types from './types';
+import * as Types from '@/types';
 
 export default function Orders() {
   const [selectedOrder, setSelectedOrder] = useState(NaN);
