@@ -10,6 +10,7 @@ import Image from 'next/image';
 
 import { products, orders } from '@/app';
 import * as Types from '@/types';
+import ListItem from '@/components/ListItem/ListItem';
 
 export default function Orders() {
   const [selectedOrder, setSelectedOrder] = useState(NaN);
@@ -54,7 +55,6 @@ export default function Orders() {
                       {`${PriceSumHandler(item.products).UAH} UAH`}
                     </p>
                   </div>
-
                   <button className={'orders-item-deleteBtn'}>
                     <Image className={'w-100 h-100'} src={bin} alt={'Delete'} />
                   </button>
@@ -72,6 +72,7 @@ export default function Orders() {
             <Image src={icon_close} alt={''} />
           </button>
           <p className={'orders-item-name'}>{orders?.find((item) => item.id === selectedOrder)?.title}</p>
+          <div className="overflow-x-auto">{products?.map((item, index) => <ListItem data={item} key={index} />)}</div>
         </div>
       </div>
     </div>

@@ -5,8 +5,6 @@ import { useState } from 'react';
 import ListItem from '@/components/ListItem/ListItem';
 
 export default function Products() {
-  // const typeOptions;
-  // const specificationOptions;
   const typeOptions = ['ALL', 'type1', 'type2', 'type3'];
   const specificationOptions = ['ALL', 'specification1', 'specification2', 'specification3'];
   const [selectedTypeOptions, setselectedTypeOptions] = useState('ALL');
@@ -85,19 +83,7 @@ export default function Products() {
           </div>
         </div>
       </div>
-      <div>
-        {products?.map((item, index) => (
-          // <>
-          //   <div key={index} className="products-list-item">
-          //     <div>{item?.isNew}</div>
-          //     <div>{item?.title}</div>
-          //     <div>{item?.title}</div>
-          //   </div>
-          // </>
-
-          <ListItem data={item} key={index} />
-        ))}
-      </div>
+      <div className="overflow-x-auto">{products?.map((item, index) => <ListItem data={item} key={index} />)}</div>
     </div>
   );
 }
