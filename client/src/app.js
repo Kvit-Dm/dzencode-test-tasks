@@ -13,7 +13,7 @@ export const products = [
     },
     price: [
       { value: 100, symbol: 'USD', isDefault: 0 },
-      { value: 2600, symbol: 'UAH', isDefault: 1 },
+      { value: 250000.5, symbol: 'UAH', isDefault: 1 },
     ],
     order: 1,
     date: '2017-06-29 12:09:33',

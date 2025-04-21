@@ -22,7 +22,7 @@ export default function Orders() {
   function PriceSumHandler(arr: Types.Product[]) {
     // calculates sum of the order
     const sumUAH: number = arr.reduce((acc, curr) => {
-      const price = curr.price.find((item) => item.symbol === 'USD');
+      const price = curr.price.find((item) => item.symbol === 'UAH');
       return acc + (price?.value ?? 0);
     }, 0);
     const sumUSD: number = arr.reduce((acc, curr) => {
