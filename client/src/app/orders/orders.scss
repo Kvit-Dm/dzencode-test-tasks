@@ -1,7 +1,10 @@
 .orders {
 
-  display: flex;
-  height: 100%;
+  display: grid;
+  grid-template-columns:1fr auto;
+  //height: 100%;
+  //overflow-y: auto;
+
 
   &-title {
     margin-bottom: 20px;
@@ -101,12 +104,15 @@
     border-radius: 10px;
     background-color: #fff;
     position: relative;
-    width: 0;
+    //width: 0;
+    min-width: 0;
     transition: width 0.5s ease;
     border: unset;
+    display: none;
 
 
     &-open {
+      display: unset;
       border: 1px solid #cfd8dc;
       padding: 5px;
       width: 100%;

@@ -33,7 +33,7 @@ export default function Orders() {
   }
 
   return (
-    <div>
+    <React.Fragment>
       <h1 className="orders-title">Заказы</h1>
       <div className="orders">
         {/*<div className={`${!selectedOrder ? 'w-100' : ''}`}>*/}
@@ -72,9 +72,9 @@ export default function Orders() {
             <Image src={icon_close} alt={''} />
           </button>
           <p className={'orders-item-name'}>{orders?.find((item) => item.id === selectedOrder)?.title}</p>
-          <div className="overflow-x-auto">{products?.map((item, index) => <ListItem data={item} key={index} />)}</div>
+          <div className="">{products?.map((item, index) => <ListItem data={item} key={index} />)}</div>
         </div>
       </div>
-    </div>
+    </React.Fragment>
   );
 }

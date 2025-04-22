@@ -83,7 +83,7 @@ export default function Products() {
           </div>
         </div>
       </div>
-      <div className="overflow-x-auto">{products?.map((item, index) => <ListItem data={item} key={index} />)}</div>
+      <div className="">{products?.map((item, index) => <ListItem data={item} key={index} />)}</div>
     </div>
   );
 }
