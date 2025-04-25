@@ -6,6 +6,7 @@ import '@/styles/scss/main.scss';
 import './orders.scss';
 import bin from '@/assets/images/bin.png';
 import icon_close from '@/assets/images/icon_close.png';
+import add_img from '@/assets/images/add.png';
 import Image from 'next/image';
 
 import { products, orders } from '@/app';
@@ -71,7 +72,13 @@ export default function Orders() {
           >
             <Image src={icon_close} alt={''} />
           </button>
-          <p className={'orders-item-name'}>{orders?.find((item) => item.id === selectedOrder)?.title}</p>
+          <h4 className="sorders-details-title">{orders?.find((item) => item.id === selectedOrder)?.title}</h4>
+          <button className="orders-details-addBtn">
+            <div className="orders-details-addBtn-img">
+              <Image className="w-100 h-100" src={add_img} alt={''} />
+            </div>
+            Добавить продукт
+          </button>
           <div className="">{products?.map((item, index) => <ListItem data={item} key={index} />)}</div>
         </div>
       </div>

@@ -39,9 +39,9 @@ export default function ListItem({ ...props }: Props) {
             <br />
             {`${props.data.price.find((item) => item.symbol === 'UAH')?.value} UAH`}
           </p>
-          <p>Длинное предлинное длиннючее название групы</p>
-          <p>Христорождественский Александр</p>
-          <p>Длинное предлинное длиннючее название заказа</p>
+          <p className="mx-2">Длинное предлинное длиннючее название групы</p>
+          <p className="mx-2">Христорождественский Александр</p>
+          <p className="mx-2">Длинное предлинное длиннючее название заказа</p>
           <div className="mx-2">{new Intl.DateTimeFormat('en-US').format(new Date(props.data.date))}</div>
         </div>
         <button className={styles.itemDeleteBtn}>

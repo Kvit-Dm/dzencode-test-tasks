@@ -5,30 +5,27 @@ import cors from 'cors';
 import ip from 'ip';
 
 dotenv.config();
-// const PORT = process.env.PORT
+const PORT = process.env.PORT
 const app = express();
 
 
 app.use(cors({origin: '*'})); //TODO
 
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'edcVxswqaz132435',
-    database: 'dzencodedb',
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
 })
 
-
-
 app.get('/', (req, res) => {
-    res.send({massage: 'Hello World!'});
-    console.log(process.env);
+    res.send({massage: `Hello World!`});
+        console.log(process.env.YOUR_VARIABLE_NAME);
 })
 
 // app.listen(PORT, () => {
 //     console.log(`Server started on port ${ip.address()}: ${PORT}`);
 // })
-
 
 db.connect(err => {
     if (err) {
@@ -38,6 +35,9 @@ db.connect(err => {
     console.log('Connected to database');
 });
 
+app.listen(process.env.PORT || 3000, () => {
+    console.log(`Server running on port ${process.env.PORT}`);
+});
 
 app.get("/", (req, res) => {
     res.json("Hello this is the backend!");
