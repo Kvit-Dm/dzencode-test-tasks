@@ -19,7 +19,7 @@ const db = mysql.createConnection({
 })
 
 app.get('/', (req, res) => {
-    res.send({massage: `Hello World!`});
+    res.send({message: `Hello World!`});
         console.log(process.env.YOUR_VARIABLE_NAME);
 })
 
