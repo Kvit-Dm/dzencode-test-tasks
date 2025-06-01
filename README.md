@@ -1,7 +1,7 @@
 # dzencode-test-tasks
 
 This repository contains a full-stack web application for product and order management.
-
+![img.png](img.png)
 ## Project Structure
 
 - **backend**: Node.js/Express.js server with MySQL database
@@ -28,7 +28,7 @@ This repository contains a full-stack web application for product and order mana
    ```bash
    npm start
    ```
-   The server will run on http://localhost:8080
+   The server will run on http://localhost:5000
 
 ### Frontend Setup
 
