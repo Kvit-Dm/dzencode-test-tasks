@@ -3,10 +3,8 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import './LeftSidebar.scss';
 
-import avatar from '../assets/images/Cid.png';
+import werehouse from '../assets/images/warehouse.png';
 import Image from 'next/image';
-// import { types } from 'sass';
-// import Null = types.Null;
 
 function LeftSidebar({ parentStyleProp = '' }) {
   const [activeItem, setActiveItem] = useState('');
@@ -30,7 +28,7 @@ function LeftSidebar({ parentStyleProp = '' }) {
 
   return (
     <div className={parentStyleProp}>
-      <Image className="avatar " src={avatar} alt="avatar" />
+      <Image className="avatar " src={werehouse} alt="werehouse" />
       <ul className="sidebar-nav">
         {menuItems.map((item) => (
           <li key={item.name}>
