@@ -6,24 +6,17 @@
   grid-template-rows: 80px 1fr;
   grid-column-gap: 1px;
   grid-row-gap: 1px;
-
-
-
 }
 
 .left-bar {
   width: 200px;
   transition: width 0.5s ease;
-  //overflow-x: hidden;
   position: relative;
   grid-area: 2 / 2 / 3 / 1;
   padding: 20px 5px 0;
   font-weight: bold;
   box-shadow: -2px 8px 16px 0px #171717;
   z-index: 2;
-  //animation: fade-in 0.5s ease-in;
-
-
 
   &-hide{
     width: 0;
@@ -47,8 +40,6 @@
       transition: top 1s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-
-
     &-shell{
       position: relative;
     }
@@ -66,13 +57,9 @@
       &-rotate{
         transform: translate(-72%, -50%) rotate(45deg);
       }
-
     }
   }
 }
-
-
-
 
 .header {
   grid-area: 1 / 1 / 2 / 3;
@@ -83,6 +70,7 @@
   border-bottom: 1px solid #28a745 ;
   box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2);
   z-index: 2;
+
     &-logo{
     width: 50px;
       height: 50px;
@@ -99,7 +87,6 @@
   padding: 40px 80px;
   background-color: rgb(241, 245, 248);
   min-width: 0;
-  //overflow-y: auto;
 }
 
 .loading-spinner{

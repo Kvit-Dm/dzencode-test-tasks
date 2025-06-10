@@ -48,6 +48,13 @@ This repository contains a full-stack web application for product and order mana
    ```
    The application will be available at http://localhost:3000
 
+## Docker Setup
+
+On windows: launch docker desktop and MySQL Workbench 
+- `docker compose up`: starts prj in docker
+- `docker compose up --build`: starts prj in docker from scratch
+
+
 ## API Endpoints
 
 - `GET /`: Returns a hello message
