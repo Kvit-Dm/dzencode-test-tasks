@@ -1,11 +1,16 @@
+import path from 'path';
 import express from 'express';
 import mysql from 'mysql2';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import ip from 'ip';
+import { fileURLToPath } from 'url';
 
-dotenv.config();
-const PORT = process.env.PORT
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+dotenv.config({ path: path.resolve(__dirname, '../.env') });
+const PORT = process.env.BACKEND_PORT || 5000;
 const app = express();
 
 
@@ -30,12 +35,12 @@ app.get('/', (req, res) => {
 db.connect(err => {
     if (err) {
         console.error('Database connection failed:', err.stack);
-        return;
+    } else {
+        console.log('Connected to database');
     }
-    console.log('Connected to database');
 });
 
-app.listen(process.env.PORT || 3000, () => {
+app.listen(process.env.PORT || 5000, () => {
     console.log(`Server running on port ${process.env.PORT}`);
 });
 
