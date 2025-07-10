@@ -1,7 +1,7 @@
 # dzencode-test-tasks
 
 This repository contains a full-stack web application for product and order management.
-![img.png](img.png)
+![img_1.png](img_1.png)
 ## Project Structure
 
 - **backend**: Node.js/Express.js server with MySQL database

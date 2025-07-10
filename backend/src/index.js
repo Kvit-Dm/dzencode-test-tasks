@@ -28,20 +28,8 @@ app.get('/', (req, res) => {
         console.log(process.env.YOUR_VARIABLE_NAME);
 })
 
-// app.listen(PORT, () => {
-//     console.log(`Server started on port ${ip.address()}: ${PORT}`);
-// })
-
-db.connect(err => {
-    if (err) {
-        console.error('Database connection failed:', err.stack);
-    } else {
-        console.log('Connected to database');
-    }
-});
-
 app.listen(process.env.PORT || 5000, () => {
-    console.log(`Server running on port ${process.env.PORT}`);
+    console.log(`Server running on port ${PORT}`);
 });
 
 app.get("/", (req, res) => {
@@ -55,3 +43,11 @@ app.get("/products", (req, res) => {
         return res.json(result);
     })
 })
+
+db.connect(err => {
+    if (err) {
+        console.error('Database connection failed:', err.stack);
+    } else {
+        console.log('Connected to database');
+    }
+});
