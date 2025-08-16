@@ -6,34 +6,22 @@ import Image from 'next/image';
 import logo from '@/assets/images/Green-Shield-Icon.png';
 
 import 'bootstrap/dist/css/bootstrap.css';
-import '@/app/page.scss';
+import '@/app/layout.scss';
 import '@/styles/scss/main.scss';
 import { useState } from 'react';
+import LayoutHeader from '@/components/Layout/Header/Header';
+import LeftBar from '@/components/Layout/LeftBar/LeftBar';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [activeToggleMenu, toggleManu] = useState(true);
-
-  function ShowUpHandler() {
-    toggleManu(!activeToggleMenu);
-  }
 
   return (
     <html lang="en">
       <body>
         <Provider store={store}>
           <div className={'main-grid'}>
-            <div className={`left-bar  ${!activeToggleMenu ? 'left-bar-hide' : ''}`}>
-              <button className={'left-bar-btn'} onClick={ShowUpHandler}>
-                <div className="left-bar-btn-shell">
-                  <div className={`left-bar-btn-arrow  ${!activeToggleMenu ? 'left-bar-btn-arrow-rotate' : ''}`}></div>
-                </div>
-              </button>
-              <LeftSidebar parentStyleProp="overflow-hidden" />
-            </div>
-            <div className="header">
-              <Image className="header-logo" src={logo} alt={'logo'} />
-              <h2 className="header-title">INVENTORY</h2>
-            </div>
+            <LeftBar activeToggleMenu={activeToggleMenu} toggleManu={toggleManu} />
+            <LayoutHeader></LayoutHeader>
             <div className="main-block">{children}</div>
           </div>
         </Provider>

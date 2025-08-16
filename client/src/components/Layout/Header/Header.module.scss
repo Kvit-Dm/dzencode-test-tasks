@@ -1,0 +1,21 @@
+.header {
+  grid-area: 1 / 1 / 2 / 3;
+  display: flex;
+  flex-direction: row;
+  padding: 0 20px;
+  align-items: center;
+  border-bottom: 1px solid #28a745 ;
+  box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+
+  &Logo{
+    width: 50px;
+    height: 50px;
+  }
+
+  &Title{
+    color: #28a745;
+    margin: 0;
+  }
+
+}

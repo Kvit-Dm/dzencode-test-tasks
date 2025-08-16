@@ -1,14 +1,4 @@
-.main-grid {
-  display: grid;
-  height: 100vh;
-  width: 100vw;
-  grid-template-columns: auto 1fr;
-  grid-template-rows: 80px 1fr;
-  grid-column-gap: 1px;
-  grid-row-gap: 1px;
-}
-
-.left-bar {
+.leftBar {
   width: 200px;
   transition: width 0.5s ease;
   position: relative;
@@ -18,12 +8,12 @@
   box-shadow: -2px 8px 16px 0px #171717;
   z-index: 2;
 
-  &-hide{
+  &Hide{
     width: 0;
     padding: 0;
   }
 
-  &-btn{
+  &Btn{
     position: absolute;
     top: 25px;
     right: -55px;
@@ -40,10 +30,10 @@
       transition: top 1s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    &-shell{
+    &Shell{
       position: relative;
     }
-    &-arrow{
+    &Arrow{
       height: 15px;
       width: 15px;
       border-top: 3px solid black;
@@ -54,41 +44,9 @@
       transform: translate(-30%, -50%) rotate(-135deg);
       transition: top 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
-      &-rotate{
+      &Rotate{
         transform: translate(-72%, -50%) rotate(45deg);
       }
     }
   }
-}
-
-.header {
-  grid-area: 1 / 1 / 2 / 3;
-  display: flex;
-  flex-direction: row;
-  padding: 0 20px;
-  align-items: center;
-  border-bottom: 1px solid #28a745 ;
-  box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2);
-  z-index: 2;
-
-    &-logo{
-    width: 50px;
-      height: 50px;
-    }
-
-    &-title{
-        color: #28a745;
-        margin: 0;
-    }
-
-}
-
-.main-block {
-  padding: 40px 80px;
-  background-color: rgb(241, 245, 248);
-  min-width: 0;
-}
-
-.loading-spinner{
-  background: red;
 }
