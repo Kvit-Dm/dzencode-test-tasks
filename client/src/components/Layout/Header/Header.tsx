@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import logo from '@/assets/images/Green-Shield-Icon.png';
 import styles from './Header.module.scss';
+import Modal from '@/components/Modal/Modal';
 
 export default function LayoutHeader() {
   return (
@@ -10,7 +11,7 @@ export default function LayoutHeader() {
         <h2 className={styles.headerTitle}>INVENTORY</h2>
       </div>
       <div>
-        <p>some text ?</p>
+        <Modal />
       </div>
     </div>
   );
