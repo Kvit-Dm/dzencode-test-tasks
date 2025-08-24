@@ -1,0 +1,143 @@
+.orders {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-column-gap: 5px;
+}
+.orders-title {
+  margin-bottom: 20px;
+}
+.orders-list {
+  width: 100%;
+  transition: width 0.5s ease;
+}
+.orders-list-hide {
+  width: 400px;
+}
+.orders-item {
+  background-color: #fff;
+  min-height: 90px;
+  max-height: 120px;
+  display: flex;
+  border: 1px solid #cfd8dc;
+  border-radius: 10px;
+  margin: 0 5px 20px 5px;
+  padding: 5px 5px;
+  cursor: pointer;
+}
+.orders-item:hover {
+  border: 1px solid #28a745;
+}
+.orders-item-content {
+  width: 100%;
+  display: flex;
+  padding: 0 0 0 10px;
+}
+.orders-item-name {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  margin-bottom: 0;
+  width: 100%;
+  text-decoration: underline;
+  font-size: 18px;
+}
+.orders-item-name-hide {
+  color: #ffffff;
+  width: 0;
+}
+.orders-item-amount {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 10%;
+  min-width: 95px;
+  padding-left: 10px;
+}
+.orders-item-date {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 20%;
+  padding-left: 10px;
+  min-width: 95px;
+}
+.orders-item-price {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 10%;
+  min-width: 100px;
+  padding-left: 10px;
+}
+.orders-item-deleteBtn {
+  text-align: center;
+  margin: auto 10px auto;
+  width: 25px;
+  height: 25px;
+  background: unset;
+  border: none;
+  transition: transform 0.2s ease;
+}
+.orders-item-deleteBtn:hover {
+  transform: scale(1.15);
+}
+.orders-details {
+  border-radius: 10px;
+  background-color: #fff;
+  position: relative;
+  min-width: 0;
+  transition: width 0.5s ease;
+  border: unset;
+  display: none;
+}
+.orders-details-title {
+  margin: 0 5px 10px;
+}
+.orders-details-addBtn {
+  display: flex;
+  align-items: center;
+  margin: 0 5px 10px;
+  background-color: unset;
+  border: none;
+  color: #28a745;
+  font-weight: bold;
+}
+.orders-details-addBtn-img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+.orders-details-open {
+  display: unset;
+  border: 1px solid #cfd8dc;
+  padding: 5px;
+  width: 100%;
+}
+.orders-details-closeBtn {
+  content: "";
+  border: 1px solid #cfd8dc;
+  box-shadow: 0 0 8px 0 #7c8487;
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background: #ffffff;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+.orders-details-closeBtn:hover {
+  background: #28a745;
+}
+.orders-details-closeBtn-hide {
+  display: none;
+}
+.orders-bottom {
+  width: 100%;
+  border: 1px solid #111111;
+  height: 5px;
+}
+
+/*# sourceMappingURL=orders.css.map */

@@ -1,0 +1,62 @@
+.itemBody {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 90px;
+  max-height: 120px;
+  border: 1px solid #cfd8dc;
+  border-radius: 10px;
+  margin: 0 5px 40px 5px;
+  padding: 5px 5px;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.itemBodyContainer {
+  display: flex;
+  align-items: center;
+  overflow-y: auto;
+}
+
+.itemBodyContainer > * {
+  flex-shrink: 0;
+}
+
+.isNewIndicator {
+  height: 10px;
+  width: 10px;
+  margin: auto 10px;
+  border-radius: 50%;
+  background-color: black;
+}
+
+.isNewIndicatorActive {
+  background: greenyellow;
+}
+
+.imageComponent {
+  width: 100px;
+  height: 90px;
+  margin: 0 20px;
+}
+
+.isAvailable {
+  margin: 0 30px;
+  font-weight: bold;
+}
+
+.itemDeleteBtn {
+  text-align: center;
+  margin: auto 10px auto;
+  width: 25px;
+  height: 25px;
+  background: unset;
+  border: none;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+.itemDeleteBtn:hover {
+  transform: scale(1.15);
+}
+
+/*# sourceMappingURL=ListItem.module.css.map */
