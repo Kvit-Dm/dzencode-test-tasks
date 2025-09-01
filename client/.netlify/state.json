@@ -1,0 +1,21 @@
+{
+	"siteId": "197b9a35-adae-4224-a3c4-3a1ef2295034",
+	"geolocation": {
+		"data": {
+			"city": "Dnipro",
+			"country": {
+				"code": "UA",
+				"name": "Ukraine"
+			},
+			"subdivision": {
+				"code": "12",
+				"name": "Dnipropetrovsk Oblast"
+			},
+			"timezone": "Europe/Kyiv",
+			"latitude": 48.4653,
+			"longitude": 35.033,
+			"postalCode": "49108"
+		},
+		"timestamp": 1756050157353
+	}
+}
