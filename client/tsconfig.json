@@ -1,27 +1,86 @@
 {
   "compilerOptions": {
-    "target": "ES2017",
+    "target": "ES2022",                   // Modern Node support (private fields, async/await)
     "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
+    "allowJs": true,                       // Allow JS files
     "skipLibCheck": true,
     "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
+    "noEmit": false,                       // Needed for ts-node scripts
+    "esModuleInterop": true,               // Default imports from CommonJS modules
+    "module": "ESNext",
+    "outDir": "dist",
+    "moduleResolution": "NodeNext",        // Correct module resolution for ESM
+    "resolveJsonModule": true,             // Allow importing JSON files
     "isolatedModules": true,
-    "jsx": "preserve",
     "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
+    "jsx": "preserve",
     "paths": {
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/scripts/**/*.ts",                 // Include Node scripts
+    "_data/**/*.json",                     // Include JSON data
+    "**/*.json"
+  ],
   "exclude": ["node_modules"]
 }
+
+
+//  var 1
+//{
+//  "compilerOptions": {
+//    "target": "ES2022",                    // newer Node version target
+//    "lib": ["dom", "dom.iterable", "esnext"],
+//    "allowJs": true,                        // allow JS files
+//    "skipLibCheck": true,
+//    "strict": true,
+//    "noEmit": false,                        // allow emitting files for ts-node or tsc
+//    "esModuleInterop": true,
+//    "module": "NodeNext",                   // Node ESM support
+//    "moduleResolution": "NodeNext",         // ESM module resolution for Node
+//    "resolveJsonModule": true,              // allow import of JSON files
+//    "isolatedModules": true,
+//    "incremental": true,
+//    "jsx": "preserve",
+//    "paths": {
+//      "@/*": ["./src/*"]
+//    }
+//  },
+//  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/scripts/**/*.ts"],
+//  "exclude": ["node_modules"]
+//}
+
+// origin
+//{
+//  "compilerOptions": {
+//    "target": "ES2017",
+//    "lib": ["dom", "dom.iterable", "esnext"],
+//    "allowJs": true,
+//    "skipLibCheck": true,
+//    "strict": true,
+//    "noEmit": true,
+//    "esModuleInterop": true,
+//    "module": "esnext",
+//    "moduleResolution": "bundler",
+//    "resolveJsonModule": true,
+//    "isolatedModules": true,
+//    "jsx": "preserve",
+//    "incremental": true,
+//    "plugins": [
+//      {
+//        "name": "next"
+//      }
+//    ],
+//    "paths": {
+//      "@/*": ["./src/*"]
+//    }
+//  },
+//  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+//  "exclude": ["node_modules"]
+//}
+
