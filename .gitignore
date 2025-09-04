@@ -6,3 +6,5 @@ package.json
 package-lock.json
 # Local Netlify folder
 .netlify
+
+client/serviceAccountKey.json
