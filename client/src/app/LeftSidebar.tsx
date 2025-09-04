@@ -10,9 +10,9 @@ function LeftSidebar({ parentStyleProp = '' }) {
   const [activeItem, setActiveItem] = useState('');
 
   const menuItems = [
+    { name: 'ПРОДУКТЫ', href: './products' },
     { name: 'ЗАКАЗЫ', href: './orders' },
     { name: 'ГРУППЫ', href: './groups' },
-    { name: 'ПРОДУКТЫ', href: './products' },
     { name: 'ПОЛЬЗОВАТЕЛИ', href: './users' },
     { name: 'НАСТРОЙКИ', href: './settings' },
   ];

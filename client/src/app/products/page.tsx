@@ -1,8 +1,14 @@
 'use client';
 import './page.scss';
 import { products } from '@/app';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ListItem from '@/components/ListItem/ListItem';
+
+// Testing
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from '@/../firebaseConfig';
+const auth = getAuth();
 
 export default function Products() {
   const typeOptions = ['ALL', 'type1', 'type2', 'type3'];
@@ -11,6 +17,29 @@ export default function Products() {
   const [selectedSpecificationOptions, setselectedSpecificationOptions] = useState('ALL');
   const [typeOptionsOpen, setTypeOptionsOpen] = useState(false);
   const [specificationOptionsOpen, setSpecificationOptionsOpen] = useState(false);
+
+  useEffect(() => {
+    async function loginPublicAccount() {
+      try {
+        const userCredential = await signInWithEmailAndPassword(
+            auth,
+            "public@demo.com",
+            "demo1234"
+        );
+        console.log("Logged in as:", userCredential.user.email);
+      } catch (err) {
+        console.error("Login error:", err);
+      }
+    }
+
+    async function getProducts() {
+      const snapshot = await getDocs(collection(db, 'products'));
+      const items = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+      console.log('items', items);
+    }
+
+    loginPublicAccount().then(()=> getProducts())
+  }, []);
 
   return (
     <div>
