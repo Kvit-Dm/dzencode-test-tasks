@@ -1,5 +1,5 @@
 import { products } from '@/app';
-import * as Types from '@/types';
+import * as Types from '@/types/types';
 import bin from '@/assets/images/bin.png';
 import Image from 'next/image';
 import React from 'react';

@@ -10,7 +10,7 @@ import add_img from '@/assets/images/add.png';
 import Image from 'next/image';
 
 import { products, orders } from '@/app';
-import * as Types from '@/types';
+import * as Types from '@/types/types';
 import ListItem from '@/components/ListItem/ListItem';
 
 export default function Orders() {

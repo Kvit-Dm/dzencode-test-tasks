@@ -7,7 +7,7 @@ import ListItem from '@/components/ListItem/ListItem';
 // Testing
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { collection, getDocs } from 'firebase/firestore';
-import { db } from '@/../firebaseConfig';
+import { db } from '@/services/firebaseConfig';
 const auth = getAuth();
 
 export default function Products() {
