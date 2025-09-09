@@ -1,14 +1,15 @@
 console.log('test text')
 
 import admin from "firebase-admin";
-import key from "./serviceAccountKey.json" with { type: "json" };
-import products from "./json.json" with { type: "json" };
-console.log('products' , products);
+import key from "./serviceAccountKey.json" with {type: "json"};
+import products from "./json.json" with {type: "json"};
+
+console.log('products', products);
 
 if (admin.apps.length === 0) {
     admin.initializeApp({
         credential: admin.credential.cert(admin.credential.cert(key)),
-})
+    })
     ;
 }
 const db = admin.firestore();
