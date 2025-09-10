@@ -7,4 +7,4 @@ package-lock.json
 # Local Netlify folder
 .netlify
 
-client/serviceAccountKey.json
+serviceAccountKey.json
