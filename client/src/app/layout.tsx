@@ -1,5 +1,5 @@
 'use client';
-import { store } from '@/store';
+import { store } from '@/store/store';
 import { Provider } from 'react-redux';
 import LeftSidebar from '@/app/LeftSidebar';
 import Image from 'next/image';

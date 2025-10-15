@@ -3,6 +3,7 @@ import './page.scss';
 import { products } from '@/app';
 import { useState, useEffect } from 'react';
 import ListItem from '@/components/ListItem/ListItem';
+import ListItem2 from '@/components/ListItem/ListItem2';
 
 // Testing
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
@@ -17,6 +18,9 @@ export default function Products() {
   const [selectedSpecificationOptions, setselectedSpecificationOptions] = useState('ALL');
   const [typeOptionsOpen, setTypeOptionsOpen] = useState(false);
   const [specificationOptionsOpen, setSpecificationOptionsOpen] = useState(false);
+  const [db_prodacts, setDB_prodacts] = useState<any[]>([]);
+
+
 
   useEffect(() => {
     async function loginPublicAccount() {
@@ -32,9 +36,12 @@ export default function Products() {
       }
     }
 
+
+
     async function getProducts() {
       const snapshot = await getDocs(collection(db, 'products'));
       const items = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+      setDB_prodacts(items);
       console.log('items', items);
     }
 
@@ -113,6 +120,7 @@ export default function Products() {
         </div>
       </div>
       <div className="">{products?.map((item, index) => <ListItem data={item} key={index} />)}</div>
+      <div className="">{db_prodacts?.map((item, index) => <ListItem2 data={item} key={index} />)}</div>
     </div>
   );
 }
